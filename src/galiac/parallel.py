@@ -41,6 +41,7 @@ copy_reg.pickle(types.MethodType, _pickle_method, _unpickle_method)
     
 class ModCalc_Multiprocessing(object):
     def __init__(self, model=None, nprocs=multiprocessing.cpu_count()):
+        
         if model is None:
             self.model = gc.Model()
         else:

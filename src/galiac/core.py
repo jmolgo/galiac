@@ -349,6 +349,7 @@ class Bulge(GalacticComponent):
         #compute the star density, in parametric form
         #use the BOXY model of the bulge
         t = (x1**4 + (x2/p.bulgeAxialRatio[1])**4 + (x3/p.bulgeAxialRatio[2])**4)**0.25
+
         return p.bulgeCentralDensity*np.exp(-t/p.bulgeScaleLength)
             
     def load_luminosity_functions (self, lf_files={}):
@@ -478,6 +479,7 @@ class SpiralArms (GalacticComponent):
         '''
          
         super(SpiralArms, self).__init__(params)
+        self.enabled = False
         self.default_parameters = {
                                     'hz_arms_sun': 0.09
                                    ,'armInitialRadius': 2.2 #the one of the bar
